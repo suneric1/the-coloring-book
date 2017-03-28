@@ -8,6 +8,7 @@ const Vision = require('vision');
 const Handlebars = require('handlebars');
 const Svg = require('svgutils').Svg;
 const pg = require('pg');
+const cool = require('cool-ascii-faces');
 
 const fs = require('fs');
 const Sequelize = require('sequelize');
@@ -178,6 +179,14 @@ server.route({
         }, {
             layout: 'none'
         });
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/cool',
+    handler: function (request, reply) {
+        reply(cool());
     }
 });
 
