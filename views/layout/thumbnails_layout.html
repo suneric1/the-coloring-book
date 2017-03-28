@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The Coloring Book</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">The Coloring Book
+                    </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="load-btn loadCatalog" onclick="loadContent('loadCatalog')"><a href="#catalog">catalog</a></li>
+                    <li class="load-btn loadWorks" onclick="loadContent('loadWorks')"><a href="#works">my works</a></li>
+                    <li class="load-btn loadMix" onclick="loadContent('loadMix')"><a href="#mix">MIX</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/signup">sign up</a></li>
+                    <li><a href="/login">login</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid col-md-offset-2 col-md-8 col-sm-12" id="main">
+
+        {{{content}}}
+
+    </div>
+    <div class="hidden message-box-container">
+        <div id="message-box" class="col-sm-offset-4 col-sm-4">
+            <h3>Do you want to delete this?</h3>
+            <br>
+            <br>
+            <div class="col-sm-offset-2 col-sm-4">
+                <input class="form-control delete" type="button" Value="Delete" onclick="">
+            </div>
+            <div class="col-sm-4">
+                <input class="form-control" type="button" Value="Cancel" onclick="hideBox()">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+        $(function () {
+            if ($('.works-content').length > 0) {
+                $('li.active').removeClass('active');
+                $('.loadWorks').addClass('active');
+            } else if ($('.catalog-content').length > 0) {
+                $('li.active').removeClass('active');
+                $('.loadCatalog').addClass('active');
+            } else if ($('.mix-content').length > 0) {
+                $('li.active').removeClass('active');
+                $('.loadMix').addClass('active');
+            }
+        });
+    </script>
+</body>
+
+</html>

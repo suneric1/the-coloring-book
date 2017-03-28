@@ -1,0 +1,22 @@
+{
+  "name": "dinostory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "blipp": "^2.3.0",
+    "handlebars": "^4.0.6",
+    "hapi": "^16.1.0",
+    "inert": "^4.1.0",
+    "pg": "^6.1.5",
+    "sequelize": "^3.30.2",
+    "sqlite3": "^3.1.8",
+    "svgutils": "^0.13.6",
+    "vision": "^4.1.1"
+  }
+}

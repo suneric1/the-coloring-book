@@ -1,0 +1,9 @@
+<h3 class="message catalog-content">{{message}}</h3>
+<br>
+<br> {{#thumbnails svgs}}
+<div class="col-sm-3 thumbnail-container">
+    <a href="/new/{{svg}}">
+        <div class="thumbnail" style="background-image: url('/images/{{svg}}.svg');"></div>
+    </a>
+</div>
+{{/thumbnails}}

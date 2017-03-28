@@ -1,0 +1,14 @@
+<h3 class="message works-content">{{message}}</h3>
+<br>
+<br> {{#thumbnails svgs}}
+<div class="col-sm-3 thumbnail-container">
+    <div class="delete-btn" onclick="showBox('{{paintid}}')">
+        <object type="image/svg+xml" data="/images/delete.svg"></object>
+    </div>
+    <a href="/works/{{svg}}/{{paintid}}">
+        <div class="thumbnail">
+            <object class="paint {{svg}}" onload="getColor('{{paintid}}')" type="image/svg+xml" data="/images/{{svg}}.svg" id="{{paintid}}"></object>
+        </div>
+    </a>
+</div>
+{{/thumbnails}}

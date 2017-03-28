@@ -1,0 +1,314 @@
+body {
+    /*    background-color: #444;*/
+    font-family: 'Lato', sans-serif;
+    color: #444;
+    transition: all 0.3s;
+    background-size: 15%;
+}
+
+h3.message {
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
+h3.title {
+    text-align: center;
+    margin-top: 80px;
+}
+
+h4 {
+    text-align: center;
+}
+
+.name {
+    text-transform: capitalize;
+}
+
+form {
+    margin-top: 30px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 30px 60px;
+    color: #444;
+}
+
+.sidemenu form {
+    padding: 0 15px;
+}
+
+.palette col-xs-2 {}
+
+input[type=text]::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #ccc;
+}
+
+input[type=text] {
+    text-align: center;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 0px 2px 0px 0px #eee;
+    transition: all 0.2s;
+}
+
+input#username {
+    text-transform: uppercase;
+}
+
+input#paintname {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input[type=text]:hover {
+    box-shadow: 0px 2px 0px 0px #888;
+}
+
+input[type=text]:focus {
+    border: none;
+    border-radius: 0px;
+    box-shadow: 0px 2px 0px 0px #000;
+}
+
+input[type=radio] {
+    display: none;
+    width: 0;
+}
+
+input[type=radio] + label {
+    color: #ccc;
+    width: 100%;
+    text-align: center;
+    transition: color 0.2s;
+}
+
+input[type=radio] + label:hover {
+    color: #888;
+}
+
+input[type=radio]:checked + label {
+    color: black;
+}
+
+input[type=submit],
+input[type=button] {
+    color: #fff;
+    background: #444;
+    border-radius: 100px;
+    border: none;
+    transition: background 0.2s;
+}
+
+input[type=submit]:not([disabled]):hover,
+input[type=button]:hover {
+    background: #000;
+}
+
+.thumbnail {
+    background-size: cover;
+    padding-bottom: 100%;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.thumbnail object.paint {
+    position: absolute;
+    pointer-events: none;
+}
+
+.thumbnail-container:hover .thumbnail {
+    background-color: #f9f9f9;
+}
+
+.color-sample {
+    padding-bottom: 100%;
+    background: #f69;
+    margin-bottom: 80%;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 1px #ddd;
+    transition: all 0.2s;
+}
+
+.color-sample:hover {
+    box-shadow: 2px 2px 0 1px #888;
+}
+
+.color-sample.selected {
+    box-shadow: 2px 2px 0 1px #444;
+}
+
+.clear {
+    clear: both;
+}
+
+path {
+    cursor: pointer;
+}
+
+.delete-btn {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: 18px;
+    top: 5px;
+    max-width: 15%;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.col-sm-3:hover>.delete-btn {
+    opacity: 0.8;
+}
+
+.col-sm-3:hover>.delete-btn:hover {
+    opacity: 1;
+}
+
+.delete-btn object {
+    width: 100%;
+    pointer-events: none;
+}
+
+.message-box-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 28, 44, 0.35);
+    transition: all 0.3s;
+}
+
+#message-box {
+    text-align: center;
+    height: 200px;
+    margin-top: 200px;
+    background: #f8f8f8;
+    box-shadow: 0 5px #444;
+}
+
+#message-box h3 {
+    margin-top: 50px;
+}
+
+input.delete {
+    background: #dc5c5c;
+}
+
+input.delete:hover {
+    background: #d64040;
+}
+
+.sidemenu {
+    position: fixed;
+    background: #fff;
+    right: 0;
+    bottom: 0;
+    box-shadow: -0px 0 3px 3px rgba(0,0,0,0.1);
+}
+
+.toggle-btn {
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.toggle-btn:hover {
+    background: #eee;
+}
+
+
+/* The switch - the box around the slider */
+
+.switch {
+    position: relative;
+    display: inline-block;
+/*    width: 60px;*/
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
+    display: none;
+}
+
+
+/* The slider */
+
+.slider {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    right: 15px;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+    .sidemenu {
+        height: 100%;
+        position: fixed;
+        right: 0;
+        top: 0;
+        box-shadow: -0px 0 3px 3px #eee;
+    }
+    .palette,
+    .btn-group {
+        margin-top: 20%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .palette,
+    .col-xs {
+        /*        margin-top: 20%;*/
+    }
+    form {
+        margin-top: 10px;
+    }
+}
