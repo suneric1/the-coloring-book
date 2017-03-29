@@ -8,7 +8,6 @@ const Vision = require('vision');
 const Handlebars = require('handlebars');
 const Svg = require('svgutils').Svg;
 const pg = require('pg');
-const cool = require('cool-ascii-faces');
 
 const fs = require('fs');
 const Sequelize = require('sequelize');
@@ -126,7 +125,6 @@ server.route({
     path: '/',
     handler: function (request, reply) {
         reply.view('catalog_content', {
-            name: currentUser,
             message: 'Pick a sketch and start coloring!',
             svgs: svgfiles
         }, {
@@ -137,56 +135,14 @@ server.route({
 
 server.route({
     method: 'GET',
-    path: '/works',
-    handler: function (request, reply) {
-
-        Colors.findAll({
-            where: {
-                paintname: {
-                    not: 'Average'
-                }
-            }
-        }).then(function (color) {
-            var colordata = JSON.parse(JSON.stringify(color));
-            var svgs = [];
-            //            console.log(colordata);
-            for (var i = 0; i < colordata.length; i++) {
-                svgs.push({
-                    svg: colordata[i].svg,
-                    paintid: colordata[i].id
-                });
-            }
-            reply.view('works_content', {
-                name: currentUser,
-                message: "Here are the works you've done.",
-                svgs: svgs
-            }, {
-                layout: 'thumbnails_layout'
-            });
-        });
-
-    }
-});
-
-server.route({
-    method: 'GET',
     path: '/loadCatalog',
     handler: function (request, reply) {
         reply.view('catalog_content', {
-            name: currentUser,
             message: 'Pick a sketch and start coloring!',
             svgs: svgfiles
         }, {
             layout: 'none'
         });
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/cool',
-    handler: function (request, reply) {
-        reply(cool());
     }
 });
 
@@ -212,7 +168,6 @@ server.route({
                 });
             }
             reply.view('works_content', {
-                name: currentUser,
                 message: "Here are the works you've done.",
                 svgs: svgs
             }, {
@@ -243,7 +198,6 @@ server.route({
                 });
             }
             reply.view('works_content', {
-                name: currentUser,
                 message: "See how everyone's painting mixed together!",
                 svgs: svgs
             }, {
@@ -348,6 +302,28 @@ server.route({
     }
 });
 
+server.route({
+    method: 'GET',
+    path: '/clearDB',
+    handler: function (request, reply) {
+        Colors.drop();
+        reply('Database cleared.');
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/{param*}',
+    handler: {
+        directory: {
+            path: './',
+            listing: true,
+            index: false,
+            redirectToSlash: true
+        }
+    }
+});
+
 function mix(svg) {
     Colors.findAll({
         where: {
@@ -422,28 +398,6 @@ server.route({
             force: true
         });
         reply('Database created.');
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/clearDB',
-    handler: function (request, reply) {
-        Colors.drop();
-        reply('Database cleared.');
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/{param*}',
-    handler: {
-        directory: {
-            path: './',
-            listing: true,
-            index: false,
-            redirectToSlash: true
-        }
     }
 });
 

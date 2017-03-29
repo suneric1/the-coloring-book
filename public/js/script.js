@@ -4,7 +4,7 @@ function loadContent(path) {
         .then(function (response) {
             return response.text();
         }).then(function (text) {
-            console.log(text);
+//            console.log(text);
             container.innerHTML = text;
         });
 }

@@ -1,0 +1,24 @@
+
+<svg width="257px" height="257px" viewBox="684 743 257 257" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="128.5" cy="128.5" r="128.5"></circle>
+        <radialGradient cx="64.2729342%" cy="14.059849%" fx="64.2729342%" fy="14.059849%" r="88.3078505%" id="radialGradient-3">
+            <stop stop-color="#8CD1FF" offset="0%"></stop>
+            <stop stop-color="#FFB8FE" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="17.1677147%" cy="13.6488605%" fx="17.1677147%" fy="13.6488605%" r="104.743457%" id="radialGradient-4">
+            <stop stop-color="#FFE72A" offset="0%"></stop>
+            <stop stop-color="#FFB8FE" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Group-3-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(684.000000, 743.000000)">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Oval-2"></g>
+        <rect id="Rectangle-2-Copy-2" fill-opacity="0.5" fill="url(#radialGradient-3)" mask="url(#mask-2)" x="0" y="0" width="256" height="256"></rect>
+        <rect id="Rectangle-2-Copy-4" fill-opacity="0.560000002" fill="url(#radialGradient-4)" mask="url(#mask-2)" x="0" y="0" width="256" height="256"></rect>
+    </g>
+</svg>

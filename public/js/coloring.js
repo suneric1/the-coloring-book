@@ -1,6 +1,10 @@
 var _currentFill;
 
 $(function () {
+//    if(document.referrer != ''){
+//        $('#cancel-btn').attr('href', document.referrer);
+//        $('#dontsave-btn').attr('href', document.referrer);
+//    }
 
     _currentFill = $('.color-sample.selected').css('background-color');
 
@@ -80,8 +84,20 @@ function submitData(paintid) {
     }).then(function (res) {
         return res.text();
     }).then(function (text) {
-        console.log(text);
-        window.location.href = '/works';
+        //        console.log(text);
+        window.location.href = '/#works';
     });
     //    console.log(formData.get('svgdata'));
+}
+
+function toggleForm() {
+    if ($('.toggle-btn').html() == '+')
+        $('.toggle-btn').html('-');
+    else
+        $('.toggle-btn').html('+');
+
+    var toShow = $('.hidden-xs');
+    var toHide = $('.hidden-xs-off');
+    toShow.addClass('hidden-xs-off').removeClass('hidden-xs');
+    toHide.addClass('hidden-xs').removeClass('hidden-xs-off');
 }

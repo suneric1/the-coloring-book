@@ -6,9 +6,62 @@ body {
     background-size: 15%;
 }
 
+.navbar {
+    background-color: #fff;
+    border: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.navbar-collapse{
+    border-color: transparent!important;
+}
+
+.navbar-brand {
+    padding: 5px 35px;
+}
+
+.navbar-brand img {
+    max-height: 40px;
+    max-width: 40px;
+}
+
+.load-btn.active a {
+    background-color: white!important;
+}
+
+.load-btn span {
+    position: absolute;
+    width: 0%;
+    left: 50%;
+    display: block;
+    height: 3px;
+    background: #3a3a3a;
+    bottom: 0;
+    transition: all ease 0.3s;
+}
+
+.load-btn.active span {
+    width: 80%;
+    left: 10%;
+}
+
+.load-btn:hover span {
+    width: 80%;
+    left: 10%;
+}
+
+ul.nav a {
+    color: #3a3a3a!important;
+}
+
 h3.message {
     margin-top: 40px;
     margin-left: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
 }
 
 h3.title {
@@ -203,7 +256,7 @@ input.delete:hover {
     background: #fff;
     right: 0;
     bottom: 0;
-    box-shadow: -0px 0 3px 3px rgba(0,0,0,0.1);
+    box-shadow: -0px 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
 .toggle-btn {
@@ -224,7 +277,7 @@ input.delete:hover {
 .switch {
     position: relative;
     display: inline-block;
-/*    width: 60px;*/
+    /*    width: 60px;*/
     height: 30px;
     font-size: 18px;
     cursor: pointer;
@@ -301,14 +354,49 @@ input:checked + .slider:before {
     .btn-group {
         margin-top: 20%;
     }
+    .navbar {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    .palette,
-    .col-xs {
-        /*        margin-top: 20%;*/
+    .navbar {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .navbar-brand {
+        padding: 10px;
+    }
+    .load-btn.active span {
+        width: 80%;
+        left: 15px;
+    }
+    .load-btn span {
+        left: 15px;
+    }
+    .load-btn:hover span {
+        width: 80%;
+        left: 15px;
     }
     form {
         margin-top: 10px;
+    }
+    .navbar-toggle{
+        border-color: transparent!important;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 15px 10px;
+    }
+    .navbar-toggle:hover, .navbar-toggle:focus{
+        background-color: transparent!important;
+    }
+    .navbar-toggle .icon-bar{
+        background-color: #3a3a3a!important;
+        width: 28px;
+    }
+    .navbar-toggle .icon-bar+.icon-bar{
+        margin-top: 8px;
     }
 }

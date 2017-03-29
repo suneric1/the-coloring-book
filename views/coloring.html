@@ -4,7 +4,7 @@
     <br>
     <div class="col-xs-12 col-sm-offset-2 col-sm-6 svg-container">
 
-        <object class="{{svg}}" type="image/svg+xml" data="/images/{{svg}}.svg" id="{{paintid}}"></object>
+        <object class="{{svg}}" type="image/svg+xml" data="/images/{{svg}}.svg" onload="getColor('{{paintid}}')" id="{{paintid}}"></object>
     </div>
     <div class="col-xs-12 col-sm-3 sidemenu">
         <form class="form-horizontal" action="" method="POST">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-8">
-                        <a id="cancel-btn" href="/works" onclick="">
+                        <a id="cancel-btn" href="/#works" onclick="">
                             <input class="form-control" type="button" Value="Cancel">
                         </a>
                     </div>
@@ -91,7 +91,7 @@
         <br>
         <br>
         <div class="col-sm-offset-2 col-sm-4">
-            <a href="/works">
+            <a id="dontsave-btn" href="/#works">
                 <input id="msg-btn-1" class="form-control" type="button" Value="Don't Save" onclick="">
             </a>
         </div>
@@ -105,20 +105,3 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/script.js"></script>
 <script src="/js/coloring.js"></script>
-<script>
-    $(function () {
-        getColor('{{paintid}}');
-    });
-
-    function toggleForm() {
-        if ($('.toggle-btn').html() == '+')
-            $('.toggle-btn').html('-');
-        else
-            $('.toggle-btn').html('+');
-
-        var toShow = $('.hidden-xs');
-        var toHide = $('.hidden-xs-off');
-        toShow.addClass('hidden-xs-off').removeClass('hidden-xs');
-        toHide.addClass('hidden-xs').removeClass('hidden-xs-off');
-    }
-</script>
