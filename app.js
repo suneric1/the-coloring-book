@@ -319,14 +319,23 @@ server.route({
     method: 'GET',
     path: '/delete/{paintid}',
     handler: function (request, reply) {
-        Colors.destroy({
+        var svg;
+        Colors.findOne({
             where: {
                 id: request.params.paintid
             }
-        }).then(function () {
-            reply('deleted');
+        }).then(function (data) {
+            var d = JSON.parse(JSON.stringify(data));
+            svg = d.svg;
+            Colors.destroy({
+                where: {
+                    id: request.params.paintid
+                }
+            }).then(function () {
+                mix(svg);
+                reply('deleted');
+            });
         });
-
     }
 });
 
@@ -334,21 +343,23 @@ server.route({
     method: 'GET',
     path: '/mix/{svg}',
     handler: function (request, reply) {
-        mix(request.params.svg).then(function () {
-            reply('Mixed.');
-        });
+        mix(request.params.svg);
+        reply('Mixed.');
     }
 });
 
 function mix(svg) {
     Colors.findAll({
         where: {
-            svg: svg
+            svg: svg,
+            paintname: {
+                not: 'Average'
+            }
         }
     }).then(function (colordata) {
         var colors = JSON.parse(JSON.stringify(colordata));
         var avgColor = {};
-        if (colors.length > 1) {
+        if (colors.length >= 1) {
             avgColor = colors[0];
             for (var i = 1; i < colors.length; i++) {
                 for (var key in colors[i]) {
