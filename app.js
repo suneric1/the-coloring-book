@@ -37,7 +37,7 @@ if (process.env.DATABASE_URL) {
         dialect: 'postgres',
         protocol: 'postgres',
         logging: true //false
-    })
+    });
 } else {
     sequelize = new Sequelize('db', 'username', 'password', {
         host: 'localhost',
