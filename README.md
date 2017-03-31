@@ -15,4 +15,4 @@ In the coloring page, when you submit, it will generate a FormData object with a
 A problem of dealing with the database in this project is that I originally wanted to create one table for each type of SVG, but it would be a mess since all of them have different amount of paths. So I ended up creating one table with a large number of columns for all the data, though there will be a bunch of empty cells in this case.
 
 ### The Sketch
-![sketch](https://www.dropbox.com/s/kasgiq69jirsj3w/thecoloringbook_sketch.jpg)
+![sketch](https://github.com/suneric1/the-coloring-book/tree/master/public/images/thecoloringbook_sketch.jpg)
