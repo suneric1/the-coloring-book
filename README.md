@@ -4,7 +4,7 @@ The Coloring Book is a website where you can pick sketch templates and color the
 
 A nice feature to mention is that you can see how it’s like when everyone’s painting mixed together. By this, you’ll have a sense of the trend of the use of color. 
 
-### [Link to live website](thecoloringbook.herokuapp.com)
+### [Link to live website](http://thecoloringbook.herokuapp.com/)
 
 ## How it was done
 
