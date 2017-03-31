@@ -1,10 +1,10 @@
 var _currentFill;
 
 $(function () {
-//    if(document.referrer != ''){
-//        $('#cancel-btn').attr('href', document.referrer);
-//        $('#dontsave-btn').attr('href', document.referrer);
-//    }
+    //    if(document.referrer != ''){
+    //        $('#cancel-btn').attr('href', document.referrer);
+    //        $('#dontsave-btn').attr('href', document.referrer);
+    //    }
 
     _currentFill = $('.color-sample.selected').css('background-color');
 
