@@ -197,7 +197,7 @@ server.route({
                     paintid: colordata[i].id
                 });
             }
-            reply.view('works_content', {
+            reply.view('mix_content', {
                 message: "See how everyone's colorings mixed together!",
                 svgs: svgs
             }, {
@@ -373,21 +373,19 @@ function mix(svg) {
 
 function averageColor(color1, color2) {
     if (color1 == '' || color1 == null)
-        return color2;
-    else if (color2 == '' || color2 == null)
-        return color1;
-    else {
-        color1 = color1.replace('rgb(', '');
-        color1 = color1.replace(')', '');
-        var rgb1 = color1.split(', ');
-        color2 = color2.replace('rgb(', '');
-        color2 = color2.replace(')', '');
-        var rgb2 = color2.split(', ');
-        for (var i = 0; i < 3; i++) {
-            rgb1[i] = parseInt((parseInt(rgb1[i]) + parseInt(rgb2[i])) / 2);
-        }
-        return 'rgb(' + rgb1.join(', ') + ')';
+        color1 = 'rgb(255, 255, 255)';
+    if (color2 == '' || color2 == null)
+        color2 = 'rgb(255, 255, 255)';
+    color1 = color1.replace('rgb(', '');
+    color1 = color1.replace(')', '');
+    var rgb1 = color1.split(', ');
+    color2 = color2.replace('rgb(', '');
+    color2 = color2.replace(')', '');
+    var rgb2 = color2.split(', ');
+    for (var i = 0; i < 3; i++) {
+        rgb1[i] = parseInt((parseInt(rgb1[i]) + parseInt(rgb2[i])) / 2);
     }
+    return 'rgb(' + rgb1.join(', ') + ')';
 }
 
 server.route({

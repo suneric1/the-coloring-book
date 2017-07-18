@@ -167,6 +167,7 @@ input[type=button]:hover {
 .thumbnail object.paint {
     position: absolute;
     pointer-events: none;
+    margin: 8px;
 }
 
 .thumbnail-container:hover .thumbnail {

@@ -1,0 +1,11 @@
+<h3 class="message works-content">{{message}}</h3>
+<br>
+<br> {{#thumbnails svgs}}
+<div class="col-sm-3 thumbnail-container">
+    <a href="/works/{{svg}}/{{paintid}}">
+        <div class="thumbnail">
+            <object class="paint {{svg}}" onload="getColor('{{paintid}}')" type="image/svg+xml" data="/images/{{svg}}.svg" id="{{paintid}}"></object>
+        </div>
+    </a>
+</div>
+{{/thumbnails}}
