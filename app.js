@@ -168,7 +168,7 @@ server.route({
                 });
             }
             reply.view('works_content', {
-                message: "Here are the works you've done.",
+                message: "Here are all the colorings.",
                 svgs: svgs
             }, {
                 layout: 'none'
@@ -198,7 +198,7 @@ server.route({
                 });
             }
             reply.view('works_content', {
-                message: "See how everyone's painting mixed together!",
+                message: "See how everyone's colorings mixed together!",
                 svgs: svgs
             }, {
                 layout: 'none'
