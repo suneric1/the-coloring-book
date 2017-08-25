@@ -13,6 +13,3 @@ I built the website with Node.js. Each sketch template is an SVG file, and the c
 In the coloring page, when you submit, it will generate a FormData object with all the color information and post it to the server. The server will update the database with a new row, and also update the row of mixed color data. It basically finds all the color for each path of the same SVG, and averages them out.
 
 A problem of dealing with the database in this project is that I originally wanted to create one table for each type of SVG, but it would be a mess since all of them have different amount of paths. So I ended up creating one table with a large number of columns for all the data, though there will be a bunch of empty cells in this case.
-
-### The Sketch
-![sketch](https://raw.githubusercontent.com/suneric1/the-coloring-book/master/public/images/thecoloringbook_sketch.jpg)
